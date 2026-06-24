@@ -1,0 +1,184 @@
+[
+  {
+    "id": "bc-loc-f1-in",
+    "code": "LDW-IN-001",
+    "locationId": "loc-f1",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f1-out",
+    "code": "LDW-OUT-001",
+    "locationId": "loc-f1",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f2-in",
+    "code": "LDW-IN-002",
+    "locationId": "loc-f2",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f2-out",
+    "code": "LDW-OUT-002",
+    "locationId": "loc-f2",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f3-in",
+    "code": "LDW-IN-003",
+    "locationId": "loc-f3",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f3-out",
+    "code": "LDW-OUT-003",
+    "locationId": "loc-f3",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f4-in",
+    "code": "LDW-IN-004",
+    "locationId": "loc-f4",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f4-out",
+    "code": "LDW-OUT-004",
+    "locationId": "loc-f4",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f5-in",
+    "code": "LDW-IN-005",
+    "locationId": "loc-f5",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f5-out",
+    "code": "LDW-OUT-005",
+    "locationId": "loc-f5",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f6-in",
+    "code": "LDW-IN-006",
+    "locationId": "loc-f6",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f6-out",
+    "code": "LDW-OUT-006",
+    "locationId": "loc-f6",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f7-in",
+    "code": "LDW-IN-007",
+    "locationId": "loc-f7",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f7-out",
+    "code": "LDW-OUT-007",
+    "locationId": "loc-f7",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f8-in",
+    "code": "LDW-IN-008",
+    "locationId": "loc-f8",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-f8-out",
+    "code": "LDW-OUT-008",
+    "locationId": "loc-f8",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z2-in",
+    "code": "LDW-IN-009",
+    "locationId": "loc-z2",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z2-out",
+    "code": "LDW-OUT-009",
+    "locationId": "loc-z2",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z3-in",
+    "code": "LDW-IN-010",
+    "locationId": "loc-z3",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z3-out",
+    "code": "LDW-OUT-010",
+    "locationId": "loc-z3",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z4-in",
+    "code": "LDW-IN-011",
+    "locationId": "loc-z4",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z4-out",
+    "code": "LDW-OUT-011",
+    "locationId": "loc-z4",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z7-in",
+    "code": "LDW-IN-012",
+    "locationId": "loc-z7",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-z7-out",
+    "code": "LDW-OUT-012",
+    "locationId": "loc-z7",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-dry-in",
+    "code": "LDW-IN-013",
+    "locationId": "loc-dry",
+    "direction": "in",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "bc-loc-dry-out",
+    "code": "LDW-OUT-013",
+    "locationId": "loc-dry",
+    "direction": "out",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]

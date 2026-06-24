@@ -1,0 +1,392 @@
+[
+  {
+    "productId": "prod-loc-f1-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f2-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-8",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-9",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-10",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-11",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f3-12",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-8",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f4-9",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f5-8",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f6-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f6-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f6-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f7-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-8",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-9",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-10",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-f8-11",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z1-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z1-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z2-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z3-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z3-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z3-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z4-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z4-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z5-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z6-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z6-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z7-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z7-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-z7-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-1",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-2",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-3",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-4",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-5",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-6",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-7",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-8",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-9",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-10",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-11",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "productId": "prod-loc-dry-12",
+    "quantity": 0,
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  }
+]
