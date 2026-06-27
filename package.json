@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "seed": "ts-node --project scripts/tsconfig.json scripts/seed-supabase.ts"
+    "seed": "ts-node --project scripts/tsconfig.json scripts/seed-supabase.ts",
+    "randomize": "ts-node --project scripts/tsconfig.json scripts/randomize-quantities.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.0",
