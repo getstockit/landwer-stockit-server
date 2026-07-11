@@ -23,12 +23,29 @@ export interface Location {
   hasBarcode?: boolean; // false = מיקום ללא ברקוד (למשל מקררי לחם/בצק). חסר = true
 }
 
+export type SupplierAlertMode = 'off' | 'daysBefore' | 'custom';
+
 export interface Supplier {
   id: string;
   name: string;
   orderDay: number;      // 0=ראשון ... 6=שבת — היום שבו שולחים הזמנה לספק זה
-  alertEnabled: boolean; // האם להתריע יום לפני יום ההזמנה
+  alertMode: SupplierAlertMode;   // off = בלי התראה בכלל
+  alertDaysBefore?: number;       // alertMode==='daysBefore': כמה ימים לפני יום ההזמנה להתריע (ברירת מחדל 1)
+  customDay?: number;             // alertMode==='custom': יום קבוע בשבוע (0-6) להתריע, בלי קשר ליום ההזמנה
+  customTime?: string;            // alertMode==='custom': שעה מבוקשת (HH:MM), למידע בלבד
   isActive: boolean;
+  createdAt: string;
+}
+
+// שמור פעם אחת לכל התקן/דפדפן שהמנהל אישר בו התראות Push. מפתח לפי
+// userId + endpoint (לא רק userId), כי אותו מנהל יכול להפעיל מכמה מכשירים.
+export interface PushSubscriptionRecord {
+  id: string;
+  userId: string;
+  subscription: {
+    endpoint: string;
+    keys: { p256dh: string; auth: string };
+  };
   createdAt: string;
 }
 

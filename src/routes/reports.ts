@@ -1,6 +1,6 @@
 import { Router, Response } from 'express';
 import { readJson } from '../utils/db';
-import { Product, Location, InventoryRow, Movement } from '../types';
+import { Product, Location, InventoryRow, Movement, Supplier } from '../types';
 import { authenticate, AuthRequest, requireManager } from '../middleware/auth';
 
 const router = Router();
@@ -15,12 +15,14 @@ router.get('/low-stock', authenticate, async (_req: AuthRequest, res: Response):
     const products  = (await readJson<Product>('products.json')).filter(p => p.isActive);
     const inventory = await readJson<InventoryRow>('inventory.json');
     const locations = await readJson<Location>('locations.json');
+    const suppliers = await readJson<Supplier>('suppliers.json');
 
     const lowStock = products
       .map(p => ({
         id: p.id, name: p.name, unit: p.unit, minQty: p.minQty,
         quantity: inventory.find(i => i.productId === p.id)?.quantity ?? 0,
         locationName: locations.find(l => l.id === p.locationId)?.name || '',
+        supplierName: p.supplierId ? (suppliers.find(s => s.id === p.supplierId)?.name || null) : null,
       }))
       .filter(p => p.quantity <= p.minQty)
       .sort((a, b) => a.quantity - b.quantity);

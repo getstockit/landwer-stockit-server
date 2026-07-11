@@ -12,6 +12,7 @@ import deliveryRoutes  from './routes/deliveries';
 import reportRoutes    from './routes/reports';
 import supplierRoutes  from './routes/suppliers';
 import alertRoutes     from './routes/alerts';
+import pushRoutes      from './routes/push';
 
 const app = express();
 app.use(cors());
@@ -26,6 +27,7 @@ app.use('/api/deliveries',deliveryRoutes);
 app.use('/api/reports',   reportRoutes);
 app.use('/api/suppliers', supplierRoutes);
 app.use('/api/alerts',    alertRoutes);
+app.use('/api/push',      pushRoutes);
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', time: new Date().toISOString() }));
 
