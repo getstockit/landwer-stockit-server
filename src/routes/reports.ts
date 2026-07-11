@@ -59,15 +59,24 @@ router.get('/current', authenticate, requireManager, async (_req: AuthRequest, r
 });
 
 router.get('/history', authenticate, requireManager, async (req: AuthRequest, res: Response): Promise<void> => {
-  const { startDate, endDate } = req.query;
+  const { startDate, endDate, startTime, endTime, type, shift, userId, locationId } = req.query;
 
   try {
     let movements = await readJson<Movement>('movements.json');
     const products  = await readJson<Product>('products.json');
     const locations = await readJson<Location>('locations.json');
 
-    if (startDate) movements = movements.filter(m => m.createdAt >= (startDate as string));
-    if (endDate)   movements = movements.filter(m => m.createdAt <= (endDate as string) + 'T23:59:59');
+    // Date+time range — startTime/endTime let the manager narrow to a specific
+    // window within a day (e.g. "what happened between 14:00-18:00"), not just whole days.
+    const startDT = startDate ? `${startDate}T${startTime || '00:00'}:00` : undefined;
+    const endDT   = endDate   ? `${endDate}T${endTime || '23:59'}:59.999` : undefined;
+    if (startDT) movements = movements.filter(m => m.createdAt >= startDT);
+    if (endDT)   movements = movements.filter(m => m.createdAt <= endDT);
+
+    if (type && type !== 'all')             movements = movements.filter(m => m.type === type);
+    if (shift && shift !== 'all')           movements = movements.filter(m => m.shift === shift);
+    if (userId && userId !== 'all')         movements = movements.filter(m => m.userId === userId);
+    if (locationId && locationId !== 'all') movements = movements.filter(m => m.locationId === locationId);
 
     const enriched = movements.map(m => ({
       ...m,
@@ -91,6 +100,13 @@ router.get('/history', authenticate, requireManager, async (req: AuthRequest, re
       byUser[m.userName].value += m.totalValue;
     });
 
+    const byLocation: Record<string, { name: string; count: number; value: number }> = {};
+    enriched.forEach(m => {
+      if (!byLocation[m.locationId]) byLocation[m.locationId] = { name: m.locationName, count: 0, value: 0 };
+      byLocation[m.locationId].count++;
+      byLocation[m.locationId].value += m.totalValue;
+    });
+
     res.json({
       movements: enriched,
       summary: {
@@ -98,7 +114,7 @@ router.get('/history', authenticate, requireManager, async (req: AuthRequest, re
         totalOut:      outMoves.reduce((s,m)=>s+m.totalValue,0),
         totalDelivery: deliveryMoves.reduce((s,m)=>s+m.totalValue,0),
         countIn: inMoves.length, countOut: outMoves.length, countDelivery: deliveryMoves.length,
-        byShift, byUser,
+        byShift, byUser, byLocation,
       },
     });
   } catch (err: any) { res.status(500).json({ error: err.message }); }
