@@ -1,4 +1,5 @@
 export type UserRole = 'employee' | 'manager';
+export type ApprovalStatus = 'pending' | 'approved' | 'rejected';
 
 export interface User {
   id: string;
@@ -7,6 +8,7 @@ export interface User {
   passwordHash: string;   // גיבוי - לא בשימוש כרגע אך שמור למסטרפיין
   role: UserRole;
   isActive: boolean;
+  approvalStatus?: ApprovalStatus; // עובדים חדשים ממתינים לאישור מנהל; חסר = מאושר (משתמשים ישנים / מנהלים)
   createdAt: string;
 }
 
@@ -18,6 +20,16 @@ export interface Location {
   type: LocationType;
   sortOrder: number;
   isActive: boolean;
+  hasBarcode?: boolean; // false = מיקום ללא ברקוד סריקה (למשל מקררי לחם/בצק). חסר = true
+}
+
+export interface Supplier {
+  id: string;
+  name: string;
+  orderDay: number;      // 0=ראשון ... 6=שבת — היום שבו שולחים הזמנה לספק זה
+  alertEnabled: boolean; // האם להתריע יום לפני יום ההזמנה
+  isActive: boolean;
+  createdAt: string;
 }
 
 export interface Product {
@@ -29,6 +41,7 @@ export interface Product {
   price: number;          // מחיר עלות ליחידה (₪) - לעריכה
   minQty: number;
   hasBarcode: boolean;    // false = בצקים/לחמים, ללא מעקב ברקוד
+  supplierId?: string;    // הספק שממנו מזמינים מוצר זה (לצורך התראות יום הזמנה)
   isActive: boolean;
   createdAt: string;
 }

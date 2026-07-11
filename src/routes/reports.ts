@@ -7,28 +7,6 @@ const router = Router();
 
 const SHIFT_HE: Record<string, string> = { morning: 'בוקר', afternoon: 'צהריים', evening: 'ערב' };
 
-// Lightweight low-stock summary — available to everyone (employee + manager),
-// unlike the full /current and /history reports which are manager-only.
-// Used for the badge/banner shown to all users, not just full reporting.
-router.get('/low-stock', authenticate, async (_req: AuthRequest, res: Response): Promise<void> => {
-  try {
-    const products  = (await readJson<Product>('products.json')).filter(p => p.isActive);
-    const inventory = await readJson<InventoryRow>('inventory.json');
-    const locations = await readJson<Location>('locations.json');
-
-    const lowStock = products
-      .map(p => ({
-        id: p.id, name: p.name, unit: p.unit, minQty: p.minQty,
-        quantity: inventory.find(i => i.productId === p.id)?.quantity ?? 0,
-        locationName: locations.find(l => l.id === p.locationId)?.name || '',
-      }))
-      .filter(p => p.quantity <= p.minQty)
-      .sort((a, b) => a.quantity - b.quantity);
-
-    res.json({ count: lowStock.length, items: lowStock });
-  } catch (err: any) { res.status(500).json({ error: err.message }); }
-});
-
 router.get('/current', authenticate, requireManager, async (_req: AuthRequest, res: Response): Promise<void> => {
   try {
     const products  = (await readJson<Product>('products.json')).filter(p => p.isActive);

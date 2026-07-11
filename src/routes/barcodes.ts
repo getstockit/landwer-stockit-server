@@ -1,11 +1,20 @@
 import { Router, Response } from 'express';
 import { readJson } from '../utils/db';
 import { Location, Product, InventoryRow } from '../types';
-import { authenticate, AuthRequest } from '../middleware/auth';
-
-interface Barcode { id: string; code: string; locationId: string; direction: 'in'|'out'; createdAt: string; }
+import { authenticate, AuthRequest, requireManager } from '../middleware/auth';
+import { regenerateBarcodes, Barcode } from '../utils/barcodes';
 
 const router = Router();
+
+// POST regenerate all barcodes with the current (continuous, 2-digit + כ/ה) numbering scheme
+// — manager only. Run this once after upgrading, and again any time the location list changes
+// outside of the locations CRUD routes (which already trigger it automatically).
+router.post('/regenerate', authenticate, requireManager, async (_req: AuthRequest, res: Response): Promise<void> => {
+  try {
+    const barcodes = await regenerateBarcodes();
+    res.json({ success: true, count: barcodes.length });
+  } catch (err: any) { res.status(500).json({ error: err.message }); }
+});
 
 router.get('/', authenticate, async (_req: AuthRequest, res: Response): Promise<void> => {
   try {

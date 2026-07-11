@@ -21,7 +21,7 @@ router.get('/', authenticate, async (_req: AuthRequest, res: Response): Promise<
 
 // POST create new product — manager only
 router.post('/', authenticate, requireManager, async (req: AuthRequest, res: Response): Promise<void> => {
-  const { name, locationId, unit, sku, price, minQty, hasBarcode } = req.body;
+  const { name, locationId, unit, sku, price, minQty, hasBarcode, supplierId } = req.body;
   if (!name?.trim() || !locationId || !unit) { res.status(400).json({ error: 'שם, מיקום ויחידה חובה' }); return; }
 
   try {
@@ -30,6 +30,7 @@ router.post('/', authenticate, requireManager, async (req: AuthRequest, res: Res
       id: uuidv4(), name: name.trim(), locationId, unit,
       sku: sku?.trim() || '', price: Number(price) || 0,
       minQty: Number(minQty) || 0, hasBarcode: hasBarcode !== false,
+      supplierId: supplierId || undefined,
       isActive: true, createdAt: new Date().toISOString(),
     };
     products.push(product);
@@ -50,7 +51,7 @@ router.put('/:id', authenticate, requireManager, async (req: AuthRequest, res: R
     const idx = products.findIndex(p => p.id === req.params.id);
     if (idx === -1) { res.status(404).json({ error: 'מוצר לא נמצא' }); return; }
 
-    const { name, unit, sku, price, minQty, hasBarcode, isActive } = req.body;
+    const { name, unit, sku, price, minQty, hasBarcode, isActive, locationId, supplierId } = req.body;
     const p = products[idx];
     if (name !== undefined)       p.name = name;
     if (unit !== undefined)       p.unit = unit;
@@ -59,6 +60,8 @@ router.put('/:id', authenticate, requireManager, async (req: AuthRequest, res: R
     if (minQty !== undefined)     p.minQty = Number(minQty);
     if (hasBarcode !== undefined) p.hasBarcode = hasBarcode;
     if (isActive !== undefined)   p.isActive = isActive;
+    if (locationId !== undefined) p.locationId = locationId;
+    if (supplierId !== undefined) p.supplierId = supplierId || undefined;
 
     await writeJson('products.json', products);
     const inventory = await readJson<InventoryRow>('inventory.json');

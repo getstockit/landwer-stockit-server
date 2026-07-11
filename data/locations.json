@@ -4,111 +4,127 @@
     "name": "מקרר 1 — ביצים M",
     "type": "fridge",
     "sortOrder": 1,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f2",
     "name": "מקרר 2 — נוזל ביצים",
     "type": "fridge",
     "sortOrder": 2,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f3",
     "name": "מקרר 3 — גבינות",
     "type": "fridge",
     "sortOrder": 3,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f4",
     "name": "מקרר 4 — ממרחים ורטבים",
     "type": "fridge",
     "sortOrder": 4,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f5",
     "name": "מקרר 5 — חלב ושמנות",
     "type": "fridge",
     "sortOrder": 5,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f6",
     "name": "מקרר 6 — הפשרת דגים",
     "type": "fridge",
     "sortOrder": 6,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f7",
     "name": "מקרר 7 — חסה",
     "type": "fridge",
     "sortOrder": 7,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-f8",
     "name": "מקרר 8 — עשבי תיבול",
     "type": "fridge",
     "sortOrder": 8,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-z1",
     "name": "מקפיא 1 — בצקים ובורקיטס",
     "type": "freezer",
     "sortOrder": 9,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": false
   },
   {
     "id": "loc-z2",
     "name": "מקפיא 2 — מוכנים",
     "type": "freezer",
     "sortOrder": 10,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-z3",
     "name": "מקפיא 3 — פסטות",
     "type": "freezer",
     "sortOrder": 11,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-z4",
     "name": "מקפיא 4 — ירקות",
     "type": "freezer",
     "sortOrder": 12,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-z5",
     "name": "מקפיא 5 — לחמים",
     "type": "freezer",
     "sortOrder": 13,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": false
   },
   {
     "id": "loc-z6",
     "name": "מקפיא 6 — לחם ללא גלוטן",
     "type": "freezer",
     "sortOrder": 14,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": false
   },
   {
     "id": "loc-z7",
     "name": "מקפיא 7 — דגים",
     "type": "freezer",
     "sortOrder": 15,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   },
   {
     "id": "loc-dry",
     "name": "מחסן יבש — שתייה",
     "type": "warehouse",
     "sortOrder": 16,
-    "isActive": true
+    "isActive": true,
+    "hasBarcode": true
   }
 ]

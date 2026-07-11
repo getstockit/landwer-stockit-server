@@ -17,7 +17,7 @@ router.get('/users', async (_req: Request, res: Response): Promise<void> => {
   } catch (err: any) { res.status(500).json({ error: err.message }); }
 });
 
-// POST register a new employee — anyone can create their own account
+// POST register a new employee — request goes to "pending" until a manager approves it
 router.post('/register', async (req: Request, res: Response): Promise<void> => {
   const { name, pin } = req.body;
   if (!name?.trim() || !pin || pin.length !== 4) {
@@ -25,18 +25,53 @@ router.post('/register', async (req: Request, res: Response): Promise<void> => {
   }
   try {
     const users = await readJson<User>('users.json');
-    if (users.some(u => u.name.trim() === name.trim() && u.isActive)) {
-      res.status(400).json({ error: 'כבר קיים משתמש בשם זה' }); return;
+    if (users.some(u => u.name.trim() === name.trim() && (u.isActive || u.approvalStatus === 'pending'))) {
+      res.status(400).json({ error: 'כבר קיים משתמש בשם זה, או שכבר יש בקשה ממתינה עם שם זה' }); return;
     }
     const passwordHash = await bcrypt.hash(pin, 10);
     const user: User = {
       id: uuidv4(), name: name.trim(), pin, passwordHash,
-      role: 'employee', isActive: true, createdAt: new Date().toISOString(),
+      role: 'employee', isActive: false, approvalStatus: 'pending',
+      createdAt: new Date().toISOString(),
     };
     users.push(user);
     await writeJson('users.json', users);
-    const token = signToken({ id: user.id, name: user.name, role: user.role });
-    res.status(201).json({ token, user: { id: user.id, name: user.name, role: user.role } });
+    // No token — the account isn't active until a manager approves the request.
+    res.status(201).json({ pending: true, message: 'הבקשה נשלחה למנהל ותאושר בקרוב' });
+  } catch (err: any) { res.status(500).json({ error: err.message }); }
+});
+
+// GET all pending employee requests — manager only
+router.get('/pending', authenticate, requireManager, async (_req: AuthRequest, res: Response): Promise<void> => {
+  try {
+    const users = await readJson<User>('users.json');
+    const pending = users.filter(u => u.approvalStatus === 'pending');
+    res.json(pending.map(u => ({ id: u.id, name: u.name, createdAt: u.createdAt })));
+  } catch (err: any) { res.status(500).json({ error: err.message }); }
+});
+
+// POST approve a pending employee request — manager only
+router.post('/users/:id/approve', authenticate, requireManager, async (req: AuthRequest, res: Response): Promise<void> => {
+  try {
+    const users = await readJson<User>('users.json');
+    const idx = users.findIndex(u => u.id === req.params.id && u.approvalStatus === 'pending');
+    if (idx === -1) { res.status(404).json({ error: 'בקשה לא נמצאה' }); return; }
+    users[idx].isActive = true;
+    users[idx].approvalStatus = 'approved';
+    await writeJson('users.json', users);
+    res.json({ success: true });
+  } catch (err: any) { res.status(500).json({ error: err.message }); }
+});
+
+// POST reject a pending employee request — manager only (removes the request entirely)
+router.post('/users/:id/reject', authenticate, requireManager, async (req: AuthRequest, res: Response): Promise<void> => {
+  try {
+    const users = await readJson<User>('users.json');
+    const idx = users.findIndex(u => u.id === req.params.id && u.approvalStatus === 'pending');
+    if (idx === -1) { res.status(404).json({ error: 'בקשה לא נמצאה' }); return; }
+    users.splice(idx, 1);
+    await writeJson('users.json', users);
+    res.json({ success: true });
   } catch (err: any) { res.status(500).json({ error: err.message }); }
 });
 
@@ -60,7 +95,7 @@ router.post('/register-manager', async (req: Request, res: Response): Promise<vo
       } catch { res.status(403).json({ error: 'אישור לא תקף' }); return; }
     } else {
       // First manager ever — require bootstrap code to prevent randoms from self-promoting
-      if (bootstrapCode !== 'LANDWER-SETUP') {
+      if (bootstrapCode !== 'LANDWER2024') {
         res.status(403).json({ error: 'קוד הקמה שגוי' }); return;
       }
     }

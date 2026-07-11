@@ -10,6 +10,8 @@ import movementRoutes  from './routes/movements';
 import barcodeRoutes   from './routes/barcodes';
 import deliveryRoutes  from './routes/deliveries';
 import reportRoutes    from './routes/reports';
+import supplierRoutes  from './routes/suppliers';
+import alertRoutes     from './routes/alerts';
 
 const app = express();
 app.use(cors());
@@ -22,6 +24,8 @@ app.use('/api/movements', movementRoutes);
 app.use('/api/barcodes',  barcodeRoutes);
 app.use('/api/deliveries',deliveryRoutes);
 app.use('/api/reports',   reportRoutes);
+app.use('/api/suppliers', supplierRoutes);
+app.use('/api/alerts',    alertRoutes);
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', time: new Date().toISOString() }));
 
