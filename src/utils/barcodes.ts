@@ -4,19 +4,23 @@ import { Location } from '../types';
 export interface Barcode { id: string; code: string; locationId: string; direction: 'in' | 'out'; createdAt: string; }
 
 // ──────────────────────────────────────────────────────────────────────────
-// Barcode numbering scheme (עודכן):
-// מספור דו-ספרתי רציף על כל המיקומים יחד (בלי הפרדה בין מקררים למקפיאים,
-// ובלי קידומת "F") + אות עברית שמציינת כיוון:
-//   כ = כניסה (in)     ה = הוצאה (out)
-// לדוגמה: מיקום ראשון ברשימה -> "01כ" / "01ה", השני -> "02כ" / "02ה" וכו'.
-// המספור נקבע לפי סדר ה-sortOrder של המיקומים הפעילים שמסומנים כבעלי ברקוד
-// (hasBarcode !== false). כל שינוי במיקומים (הוספה/הסרה/סידור מחדש) דורש
-// קריאה מחדש לפונקציה הזו כדי לשמור על מספור רציף ללא כפילויות.
+// Barcode numbering scheme
+// ---------------------------------------------------------------------------
+// Continuous number across ALL fridges AND freezers together (no separate
+// counters per type, no "F"/"Z" prefix) + a letter for direction:
+//   1I / 1O, 2I / 2O, 3I / 3O ... (I = in/כניסה, O = out/יציאה)
+//
+// English letters, not Hebrew כ/ה/נ/י: these are real CODE128 barcodes (see
+// BarcodesPage.tsx), and CODE128 can only encode ASCII/Latin characters — it
+// physically cannot encode Hebrew at all, regardless of which phone scans
+// it. The fridge/freezer distinction is still visible via the location name
+// printed right next to the code on the label — it's just not baked into
+// the code string itself.
+//
+// Locations excluded from barcodes (hasBarcode === false, e.g. dough/bread
+// freezers that aren't tracked by scan) are skipped and don't consume a
+// number, keeping the sequence gap-free.
 // ──────────────────────────────────────────────────────────────────────────
-
-function pad2(n: number): string {
-  return String(n).padStart(2, '0');
-}
 
 export async function regenerateBarcodes(): Promise<Barcode[]> {
   const locations = (await readJson<Location>('locations.json'))
@@ -27,9 +31,9 @@ export async function regenerateBarcodes(): Promise<Barcode[]> {
   const barcodes: Barcode[] = [];
 
   locations.forEach((loc, idx) => {
-    const n = pad2(idx + 1);
-    barcodes.push({ id: `bc-${loc.id}-in`, code: `${n}כ`, locationId: loc.id, direction: 'in', createdAt: now });
-    barcodes.push({ id: `bc-${loc.id}-out`, code: `${n}ה`, locationId: loc.id, direction: 'out', createdAt: now });
+    const n = String(idx + 1);
+    barcodes.push({ id: `bc-${loc.id}-in`, code: `${n}I`, locationId: loc.id, direction: 'in', createdAt: now });
+    barcodes.push({ id: `bc-${loc.id}-out`, code: `${n}O`, locationId: loc.id, direction: 'out', createdAt: now });
   });
 
   await writeJson('barcodes.json', barcodes);

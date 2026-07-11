@@ -30,24 +30,17 @@ function getClient(): SupabaseClient {
   return client;
 }
 
-// Simple in-memory cache so a single request that calls readJson() multiple
-// times for the same table (common in this codebase) doesn't hit the DB
-// more than once per table per process lifetime — refreshed on every write.
-//
-// IMPORTANT: we always return a deep copy of the cached value, never the
-// live cached array itself. The original file-based readJson() returned a
-// freshly-parsed object graph on every call (JSON.parse of a string), so
-// nothing in the route code was ever shared between two readJson() calls.
-// Handing out the same in-memory array reference here would let two
-// concurrent requests mutate the exact same objects before either one
-// calls writeJson — including a request that fails validation mid-mutation
-// and never writes, silently corrupting what the next reader sees. Deep
-// copying on every read preserves the original, safe behavior exactly.
-const cache = new Map<string, unknown[]>();
+// NOTE: there is intentionally NO in-memory cache here. An earlier version
+// cached each table for the lifetime of the Node process, which caused a
+// real bug: any write that happened outside that specific running process
+// (for example the randomize-quantities.ts script writing directly to
+// Supabase, or simply Render spinning up a fresh instance after a restart)
+// left the cache silently stale, so different requests could see different,
+// inconsistent data depending on which process happened to handle them.
+// Supabase reads are cheap and fast enough for this app's scale — always
+// reading fresh removes that whole class of bug.
 
 export async function readJson<T>(filename: string): Promise<T[]> {
-  if (cache.has(filename)) return structuredClone(cache.get(filename)) as T[];
-
   const sb = getClient();
   const { data, error } = await sb
     .from('kv_store')
@@ -57,9 +50,7 @@ export async function readJson<T>(filename: string): Promise<T[]> {
 
   if (error) throw new Error(`Supabase read error (${filename}): ${error.message}`);
 
-  const value = (data?.value as T[]) ?? [];
-  cache.set(filename, value);
-  return structuredClone(value);
+  return (data?.value as T[]) ?? [];
 }
 
 export async function writeJson<T>(filename: string, data: T[]): Promise<void> {
@@ -69,6 +60,4 @@ export async function writeJson<T>(filename: string, data: T[]): Promise<void> {
     .upsert({ key: filename, value: data, updated_at: new Date().toISOString() }, { onConflict: 'key' });
 
   if (error) throw new Error(`Supabase write error (${filename}): ${error.message}`);
-
-  cache.set(filename, structuredClone(data));
 }

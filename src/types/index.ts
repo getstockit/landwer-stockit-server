@@ -8,7 +8,7 @@ export interface User {
   passwordHash: string;   // גיבוי - לא בשימוש כרגע אך שמור למסטרפיין
   role: UserRole;
   isActive: boolean;
-  approvalStatus?: ApprovalStatus; // עובדים חדשים ממתינים לאישור מנהל; חסר = מאושר (משתמשים ישנים / מנהלים)
+  approvalStatus?: ApprovalStatus; // עובדים חדשים ממתינים לאישור מנהל; חסר = מאושר (משתמשים ישנים/מנהלים)
   createdAt: string;
 }
 
@@ -20,7 +20,7 @@ export interface Location {
   type: LocationType;
   sortOrder: number;
   isActive: boolean;
-  hasBarcode?: boolean; // false = מיקום ללא ברקוד סריקה (למשל מקררי לחם/בצק). חסר = true
+  hasBarcode?: boolean; // false = מיקום ללא ברקוד (למשל מקררי לחם/בצק). חסר = true
 }
 
 export interface Supplier {

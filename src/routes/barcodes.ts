@@ -6,9 +6,10 @@ import { regenerateBarcodes, Barcode } from '../utils/barcodes';
 
 const router = Router();
 
-// POST regenerate all barcodes with the current (continuous, 2-digit + כ/ה) numbering scheme
-// — manager only. Run this once after upgrading, and again any time the location list changes
-// outside of the locations CRUD routes (which already trigger it automatically).
+// POST regenerate all barcodes with the current numbering scheme — manager only.
+// Also runs automatically whenever locations are added/edited/removed (see
+// routes/locations.ts); this manual trigger is here as a safety net / for the
+// one-time migration off the old F1I/Z3O per-type scheme.
 router.post('/regenerate', authenticate, requireManager, async (_req: AuthRequest, res: Response): Promise<void> => {
   try {
     const barcodes = await regenerateBarcodes();

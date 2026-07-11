@@ -95,7 +95,7 @@ router.post('/register-manager', async (req: Request, res: Response): Promise<vo
       } catch { res.status(403).json({ error: 'אישור לא תקף' }); return; }
     } else {
       // First manager ever — require bootstrap code to prevent randoms from self-promoting
-      if (bootstrapCode !== 'LANDWER2024') {
+      if (bootstrapCode !== 'LANDWER-SETUP') {
         res.status(403).json({ error: 'קוד הקמה שגוי' }); return;
       }
     }

@@ -1,182 +1,182 @@
 [
   {
     "id": "bc-loc-f1-in",
-    "code": "01כ",
+    "code": "1I",
     "locationId": "loc-f1",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f1-out",
-    "code": "01ה",
+    "code": "1O",
     "locationId": "loc-f1",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f2-in",
-    "code": "02כ",
+    "code": "2I",
     "locationId": "loc-f2",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f2-out",
-    "code": "02ה",
+    "code": "2O",
     "locationId": "loc-f2",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f3-in",
-    "code": "03כ",
+    "code": "3I",
     "locationId": "loc-f3",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f3-out",
-    "code": "03ה",
+    "code": "3O",
     "locationId": "loc-f3",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f4-in",
-    "code": "04כ",
+    "code": "4I",
     "locationId": "loc-f4",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f4-out",
-    "code": "04ה",
+    "code": "4O",
     "locationId": "loc-f4",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f5-in",
-    "code": "05כ",
+    "code": "5I",
     "locationId": "loc-f5",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f5-out",
-    "code": "05ה",
+    "code": "5O",
     "locationId": "loc-f5",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f6-in",
-    "code": "06כ",
+    "code": "6I",
     "locationId": "loc-f6",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f6-out",
-    "code": "06ה",
+    "code": "6O",
     "locationId": "loc-f6",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f7-in",
-    "code": "07כ",
+    "code": "7I",
     "locationId": "loc-f7",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f7-out",
-    "code": "07ה",
+    "code": "7O",
     "locationId": "loc-f7",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f8-in",
-    "code": "08כ",
+    "code": "8I",
     "locationId": "loc-f8",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-f8-out",
-    "code": "08ה",
+    "code": "8O",
     "locationId": "loc-f8",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z2-in",
-    "code": "09כ",
+    "code": "9I",
     "locationId": "loc-z2",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z2-out",
-    "code": "09ה",
+    "code": "9O",
     "locationId": "loc-z2",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z3-in",
-    "code": "10כ",
+    "code": "10I",
     "locationId": "loc-z3",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z3-out",
-    "code": "10ה",
+    "code": "10O",
     "locationId": "loc-z3",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z4-in",
-    "code": "11כ",
+    "code": "11I",
     "locationId": "loc-z4",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z4-out",
-    "code": "11ה",
+    "code": "11O",
     "locationId": "loc-z4",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z7-in",
-    "code": "12כ",
+    "code": "12I",
     "locationId": "loc-z7",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-z7-out",
-    "code": "12ה",
+    "code": "12O",
     "locationId": "loc-z7",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-dry-in",
-    "code": "13כ",
+    "code": "13I",
     "locationId": "loc-dry",
     "direction": "in",
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "bc-loc-dry-out",
-    "code": "13ה",
+    "code": "13O",
     "locationId": "loc-dry",
     "direction": "out",
     "createdAt": "2024-01-01T00:00:00.000Z"
